@@ -1,4 +1,5 @@
 import Comp from "./Comp-one/Comp-one";
+import Person from "./Person/Person";
 
 import logo from './logo.svg';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
       <h1> This is a demo  </h1>
       <h2> Please check out components one by one </h2>
       <Comp />
+      <Person /> 
     </div>
   );
 }
