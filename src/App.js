@@ -24,7 +24,8 @@ function App() {
       <h1> This is a demo  </h1>
       <h2> Please check out components one by one </h2>
       <Comp />
-      <Person /> 
+      <Person name="Aayush" age="23" />
+      <Person name="Gautam" age="23">testing out the child component</Person>
     </div>
   );
 }
