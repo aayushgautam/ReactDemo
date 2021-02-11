@@ -23,7 +23,22 @@ const App = (props) => {
     setPersonsState({
       persons: [
         {
-          name: newName,
+          name: "Deepanshu",
+          age: "25",
+        },
+        {
+          name: "Pratap",
+          age: "20",
+        },
+      ],
+    });
+  };
+
+  const nameChangedHandler = (event) => {
+    setPersonsState({
+      persons: [
+        {
+          name: event.target.value,
           age: "25",
         },
         {
@@ -45,6 +60,7 @@ const App = (props) => {
       <Person
         name={personsState.persons[0].name}
         age={personsState.persons[0].age}
+        change={nameChangedHandler}
       />
       <Person
         name={personsState.persons[1].name}
