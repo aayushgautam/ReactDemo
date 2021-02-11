@@ -18,12 +18,12 @@ const App = (props) => {
     ],
   });
 
-  const switchNameHandler = () => {
+  const switchNameHandler = (newName) => {
     console.log("was clicked!");
     setPersonsState({
       persons: [
         {
-          name: "Deepanshu",
+          name: newName,
           age: "25",
         },
         {
@@ -39,15 +39,17 @@ const App = (props) => {
       <h1> This is a demo </h1>
       <h2> Please check out components one by one </h2>
       <Comp />
-      <button onClick={switchNameHandler}>TRY ME OUT</button>
+      <button onClick={() => switchNameHandler("Random Kappoor")}>
+        TRY ME OUT
+      </button>
       <Person
         name={personsState.persons[0].name}
         age={personsState.persons[0].age}
       />
       <Person
         name={personsState.persons[1].name}
-        age= {personsState.persons[1].age}
-        click= {switchNameHandler} 
+        age={personsState.persons[1].age}
+        click={() => switchNameHandler("Harsh Beniwal")}
       >
         testing out the child component
       </Person>
