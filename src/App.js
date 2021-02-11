@@ -46,7 +46,8 @@ const App = (props) => {
       />
       <Person
         name={personsState.persons[1].name}
-        age={personsState.persons[1].age}
+        age= {personsState.persons[1].age}
+        click= {switchNameHandler} 
       >
         testing out the child component
       </Person>
