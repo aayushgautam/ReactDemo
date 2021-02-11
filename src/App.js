@@ -2,10 +2,10 @@ import Comp from "./Comp-one/Comp-one";
 import Person from "./Person/Person";
 
 import "./App.css";
-import { Component } from "react";
+import { useState } from "react";
 
-class App extends Component {
-  state = {
+const App = (props) => {
+  const [personsState, setPersonsState] = useState({
     persons: [
       {
         name: "Aayush",
@@ -16,11 +16,11 @@ class App extends Component {
         age: "24",
       },
     ],
-  };
+  });
 
-  switchNameHandler = () => {
+  const switchNameHandler = () => {
     console.log("was clicked!");
-    this.setState({
+    setPersonsState({
       persons: [
         {
           name: "Deepanshu",
@@ -34,26 +34,24 @@ class App extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="App">
-        <h1> This is a demo </h1>
-        <h2> Please check out components one by one </h2>
-        <Comp />
-        <button onClick={this.switchNameHandler}>TRY ME OUT</button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[0].age}
-        >
-          testing out the child component
-        </Person>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <h1> This is a demo </h1>
+      <h2> Please check out components one by one </h2>
+      <Comp />
+      <button onClick={switchNameHandler}>TRY ME OUT</button>
+      <Person
+        name={personsState.persons[0].name}
+        age={personsState.persons[0].age}
+      />
+      <Person
+        name={personsState.persons[1].name}
+        age={personsState.persons[1].age}
+      >
+        testing out the child component
+      </Person>
+    </div>
+  );
+};
 
 export default App;
