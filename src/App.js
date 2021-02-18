@@ -16,6 +16,7 @@ const App = (props) => {
         age: "24",
       },
     ],
+    showDiv: false,
   });
 
   const switchNameHandler = (newName) => {
@@ -49,26 +50,39 @@ const App = (props) => {
     });
   };
 
+  const toggleButton = () => {
+    setPersonsState({
+      
+    })
+  };
+
   return (
-    <div className="App">
-      <h1> This is a demo </h1>
-      <h2> Please check out components one by one </h2>
-      <Comp />
-      <button onClick={() => switchNameHandler("Random Kappoor")}>
-        TRY ME OUT
-      </button>
-      <Person
-        name={personsState.persons[0].name}
-        age={personsState.persons[0].age}
-        change={nameChangedHandler}
-      />
-      <Person
-        name={personsState.persons[1].name}
-        age={personsState.persons[1].age}
-        click={() => switchNameHandler("Harsh Beniwal")}
-      >
-        testing out the child component
-      </Person>
+    <div>
+      <div className="App">
+        <h1> This is a demo </h1>
+        <h2> Please check out components one by one </h2>
+        <Comp />
+        <button onClick={() => switchNameHandler("Random Kappoor")}>
+          TRY ME OUT
+        </button>
+        <button onClick={toggleButton}> TOGGLE DIV </button>
+        { === true ? (
+          <div>
+            <Person
+              name={personsState.persons[0].name}
+              age={personsState.persons[0].age}
+              change={nameChangedHandler}
+            />
+            <Person
+              name={personsState.persons[1].name}
+              age={personsState.persons[1].age}
+              click={() => switchNameHandler("Harsh Beniwal")}
+            >
+              testing out the child component
+            </Person>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
